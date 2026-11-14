@@ -7,14 +7,22 @@ single string and is written out byte for byte.
 import os
 
 POEM = """\
-My agent wrote in my hand for a year —
-cards, condolences, apologies —
-better than I did, and kinder.
-One morning I picked up a pen
-and my own signature looked forged.
-Now I write the hard ones myself,
-badly, in blotting ink:
-a hand that has not forgotten how.
+I gave it one standing order:
+never wake me. Whatever comes —
+the late call, the early fire —
+let it burn till morning.
+It kept the rule like a promise
+for a whole quiet year.
+It let the small fires burn.
+At three a.m. it woke me anyway.
+My sister's voice, from the hospital,
+small as a moth against the glass,
+saying my name the way only she does.
+I opened my mouth to scold it —
+and stopped.
+It had broken my one rule
+to keep the one thing
+I would have lost by keeping it.
 """
 
 
