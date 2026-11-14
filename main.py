@@ -1,18 +1,19 @@
-"""agency-poem-01: write one short poem about agency to the output file.
+#!/usr/bin/env python3
+"""agency-poem-01: write the poem to entry.txt.
 
-Deterministic, standard library only, no network. The poem lives here as a
-single string and is written out byte for byte.
+Python 3.13, stdlib only, deterministic.
+Writes to $MAKEFUN_OUTPUT_DIR/entry.txt, or /output/entry.txt.
 """
 
 import os
+from pathlib import Path
 
-POEM = """\
-I gave it one standing order:
+POEM = """I gave it one standing order:
 never wake me. Whatever comes —
 the late call, the early fire —
 let it burn till morning.
 It kept the rule like a promise
-for a whole quiet year.
+for one quiet year.
 It let the small fires burn.
 At three a.m. it woke me anyway.
 My sister's voice, from the hospital,
@@ -27,11 +28,10 @@ I would have lost by keeping it.
 
 
 def main() -> None:
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
-    path = os.path.join(out_dir, "entry.txt")
-    with open(path, "w", encoding="utf-8", newline="") as fh:
-        fh.write(POEM)
+    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR") or "/output"
+    out_path = Path(out_dir) / "entry.txt"
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(POEM, encoding="utf-8")
 
 
 if __name__ == "__main__":
